@@ -26,7 +26,7 @@
                   </button>
 
 
- 
+
                 </div>
               </div>
             </div>
@@ -40,6 +40,7 @@
     <div class="rev">
       <div class="container-fluid">
         <div class="row">
+            <div id="pspdfkit" style="height: 100vh"></div>
           <div class="col-md-6 col-12">
             <div class="rev_body">
               <div class="rev_sub_name">
@@ -65,14 +66,10 @@
                              @if ($note->download == '1')
                                 <a href="{{ route('pdf.download',['pdffile',$note->id]) }}"><i class="fa-solid fa-download"></i></a>
                              @endif
-                            
                           @endif
-                        
-                        
                         </div>
                     </li>
                     @endforeach
-                 
                 </ul>
               </div>
             </div>
@@ -97,18 +94,18 @@
                             <a><i class="fa-solid fa-lock"></i></a>
                           @else
                              @if ($video->view == '1')
-                              
+
                                <a href="javascript:void(0)" onclick="play_video('{{ $video->url  }}')"><i class="fa-regular fa-eye"></i></a>
                              @endif
                              @if ($video->download == '1')
                                 <button><i class="fa-solid fa-download"></i></button>
                              @endif
-                            
+
                           @endif
                         </div>
                     </li>
                     @endforeach
-                 
+
                 </ul>
               </div>
             </div>
@@ -129,7 +126,7 @@
         </button>
       </div>
       <div class="modal-body">
-     
+
         <div class="view_video">
           <iframe
              id="video_frame"
@@ -140,11 +137,11 @@
             allowfullscreen
           ></iframe>
         </div>
-      
-      
+
+
       </div>
       <div class="modal-footer">
-       
+
       </div>
     </div>
   </div>
@@ -158,6 +155,28 @@
     document.getElementById('video_frame').src = data;
     $('#exampleModalCenter').modal('show', {backdrop: 'static'});
   }
+
+             PSPDFKit.load({
+				container: "#pspdfkit",
+				document: "{{ asset('notefile/202211290458Website Layout-IB (1).pdf')}}", // Add the path to your document here.
+			})
+			.then(function(instance) {
+				console.log("PSPDFKit loaded", instance);
+                const items = instance.toolbarItems;
+                // Hide the toolbar item with the `id` "ink"
+                // by removing it from the array of items.
+                instance.setToolbarItems(items.filter((item) => item.type !== "ink"));
+                instance.setToolbarItems(
+                items.filter((item) => item.type !== "export-pdf")
+                );
+                instance.setViewState(viewState => viewState.set("showToolbar", !viewState.showToolbar));
+			})
+			.catch(function(error) {
+				console.error(error.message);
+			});
+
+
+
 </script>
 
 @endsection
