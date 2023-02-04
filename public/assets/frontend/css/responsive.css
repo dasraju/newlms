@@ -1,3 +1,5 @@
+/*****************************************************1199******************************************************/
+
 @media screen and (max-width: 1199px) {
   #carousel img {
     height: 70vh;
@@ -30,7 +32,7 @@
     padding: 0px 10px;
   }
 }
-
+/*****************************************************1024******************************************************/
 @media screen and (max-width: 1024px) {
   .details_banner {
     height: 285px;
@@ -58,6 +60,25 @@
   }
   .rev_sub_topic {
     width: 94%;
+  }
+  .dash_body {
+    padding: 30px 12px;
+  }
+  .dash_details {
+    margin-left: 15px;
+  }
+  .dash_icon i {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    padding: 18px;
+    line-height: 43px;
+  }
+  .dash_details a {
+    font-size: 15px;
+  }
+  .pro_body p span:nth-child(1) {
+    width: 30%;
   }
 }
 
@@ -209,6 +230,19 @@
   .rev_body {
     margin-bottom: 20px;
   }
+  .dash_body {
+    margin-bottom: 20px;
+  }
+  .pro_body p span:nth-child(1) {
+    width: 35%;
+  }
+  .form_btn_top ul li {
+    font-size: 19px;
+    font-weight: 500;
+  }
+  .all_courses p {
+    font-size: 18px;
+  }
 }
 /*****************************************************767******************************************************/
 @media screen and (max-width: 767px) {
@@ -344,6 +378,38 @@
   .menu_list {
     margin: 20px 0px;
     padding: 0px 15px;
+  }
+  #dash_col {
+    margin-top: 50px;
+  }
+  #dash_back {
+    margin-top: 0px;
+    padding: 15px 10px;
+  }
+  .pro_body {
+    margin-top: 22px;
+    padding: 10px 10px;
+  }
+  .pro_body p span:nth-child(1) {
+    width: 30%;
+    font-size: 15px;
+  }
+  .pro_body p span {
+    padding: 10px 0px;
+    font-size: 15px;
+  }
+  .form_btn_top ul li {
+    font-size: 16px;
+  }
+  .all_courses p {
+    font-size: 15px;
+  }
+  .form_body h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .form_body p {
+    font-size: 15px;
   }
 }
 /*****************************************************575******************************************************/
@@ -605,5 +671,44 @@
     margin-top: 30px;
     padding: 8px 0;
     font-size: 14px;
+  }
+  .dash_title h1 {
+    font-size: 18px;
+  }
+  #dash_back {
+    padding: 15px 10px;
+  }
+  #dash_col {
+    margin-top: 20px;
+  }
+  .pro_body p {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .pro_body p span:nth-child(1) {
+    width: 100%;
+  }
+  .pro_body p span {
+    padding: 5px 0px;
+  }
+  .form_btn_top ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_btn_top {
+    margin: 15px 0px;
+  }
+  .form_btn_top ul li {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .member_active {
+    border-bottom: 3px solid #025f1e;
+  }
+  .form_body {
+    background: #fff;
+    padding: 15px 15px;
   }
 }

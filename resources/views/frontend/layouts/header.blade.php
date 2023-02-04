@@ -27,13 +27,30 @@
                   <li><a href="{{ route('user.registration') }}">Register</a></li>
                   @endguest
                   @auth
-                  <li class="nav-item dropdown" >
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" href="{{ route('user.profile') }}">{{ auth()->user()->name }}</a>
-                    
+                  <li class="pro_heaad">
+                    <a href="">Roy <i class="fa-solid fa-chevron-up"></i>
+                      <div class="pro_border">
+                        <div class="after_login">
+                          <a href="{{ route('user.dashboard') }}">Dashboard</a>
+                          <a href="{{ route('user.profile') }}">My profile</a>
+                          <a href="{{ route('user.enroll.course') }}">Enroll Courses</a>
+                          <a href="{{ route('user.reviews') }}">Reviews</a>
+                          <a href="{{ route('user.purchase.form') }}">Purchase Form</a>
+                          <a href="{{ route('user.purchase.history') }}">Purchase History</a>
+                          <a href="{{ route('user.settings') }}">Settings</a>
+                          <a href="{{ route('user.logout') }}">Logout</a>
+                        </div>
+                      </div>
+
+                  </a>
                   </li>
+                  {{-- <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" href="{{ route('user.profile') }}">{{ auth()->user()->name }}</a>
+
+                  </li> --}}
                   @endauth
-                 
-                
+
+
                   <li>
                     <a href=""><i class="fa-brands fa-facebook-f"></i></a>
                   </li>
@@ -79,7 +96,7 @@
                         </a>
                         {{-- //menu level two --}}
                         <ul class="dropdown-menu">
-                        @foreach (getSubMenu($menu ->id) as $submenu)   
+                        @foreach (getSubMenu($menu ->id) as $submenu)
                         <li class="nav-item dropdown">
                             <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             {{$submenu->name}}
@@ -94,21 +111,21 @@
                             </ul>
                         </li>
                          @endforeach
-                        
+
                         </ul>
                     </li>
                     @else
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{$menu->name}}</a>
                     </li>
-                   @endif 
+                   @endif
                 @endforeach
-              
-              
+
+
               <li class="nav-item">
                 <a class="nav-link" href="{{route('course.list')}}">Courses</a>
               </li>
-             
+
             </ul>
           </div>
         </div>
@@ -120,4 +137,4 @@
 
     <!-----------Meuu List--------->
   </div>
-  <!----- Fixed_top-------> 
+  <!----- Fixed_top------->

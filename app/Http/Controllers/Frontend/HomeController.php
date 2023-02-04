@@ -25,15 +25,15 @@ class HomeController extends Controller
 {
     public  $expdate ='';
     public function index(){
-  
+
         // dd(Auth::user()->getAllPermissions());
         $courses = Course::with('instructor')->get();
-     
+
         return view('frontend.pages.index',compact('courses'));
     }
 
     public function chapter($type,$chapterId){
-   
+
 
         switch($type) {
             case 'Revision':
@@ -61,6 +61,7 @@ class HomeController extends Controller
         $subject = Subject::with('category','category.menu')->where('id',$sub_id)->first();
         // dd($subject);
         $data = SubSubCategory::where('subject_id',$sub_id)->orderBy('created_at', 'asc')->get();
+      
         return view('frontend.pages.detailsmenu',compact('data','subject'));
 
     }
@@ -81,7 +82,7 @@ class HomeController extends Controller
         $videofiles = TopicalVideo::with('topicalchapter')->where('topical_chapter_id',$id)->get();
         return view('frontend.pages.topical_details',compact('notefilesqsn','notefilessol','videofiles'));
     }
-    
+
 
       public function pastpaper_details($id){
         $notefilesqsn = TopicalNote::with('topicalchapter')->where('topical_chapter_id',$id)->where('type','question')->get();
@@ -121,7 +122,7 @@ class HomeController extends Controller
             'Content-Type: application/pdf',
           );
           return Response()->download($file, 'lms.pdf', $headers);
-          
+
     }
-    
+
 }

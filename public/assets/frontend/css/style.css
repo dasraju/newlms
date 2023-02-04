@@ -67,6 +67,50 @@ a:hover {
   z-index: 999;
   box-shadow: 0px 4px 10px #ccc;
 }
+
+/******* AFTER LOGIN *******/
+.h_top_right .pro_heaad {
+  position: relative;
+}
+.h_top_right .pro_heaad .pro_border {
+  display: none;
+}
+.h_top_right .pro_heaad:hover .pro_border {
+  display: block;
+}
+.h_top_right .pro_heaad i {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.h_top_right .pro_heaad:hover i {
+  transform: rotate(180deg);
+  font-size: 12px;
+  margin-left: 5px;
+}
+.h_top_right .after_login {
+  margin-top: 0px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  z-index: 99999;
+  border: 1px solid #ccc;
+  background: #1c6732;
+  position: absolute;
+  min-width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.h_top_right .after_login a {
+  padding: 5px 0px;
+  color: #fff;
+}
+.h_top_right .after_login a:nth-child(1) {
+  padding-top: 0px;
+}
+/*******End AFTER LOGIN *******/
+
 /****** Header Top********/
 #header_top {
   padding: 6px 40px;
@@ -1215,7 +1259,6 @@ a:hover {
 .rev_sub_topic ul li a i {
   font-size: 18px;
   color: #dbaf29;
-  margin-right: 10px;
   transition: 0.3s;
 }
 .rev_sub_topic ul li a:hover i {
@@ -1262,20 +1305,21 @@ a:hover {
   margin-right: 0px;
 }
 .rev_det_icon button i {
-  padding: 2px 10px;
-  font-size: 12px;
-  color: #fff;
+  padding: 5px 10px !important;
+  font-size: 15px !important;
+  color: #fff !important;
 }
 .rev_det_icon button:hover {
   background: #dbaf29;
 }
 .rev_det_icon button:hover i {
-  color: #025f1e;
+  color: #025f1e !important;
 }
 .rev_det_file {
   width: 70%;
 }
 .rev_det_icon {
+  align-items: center;
   width: 30%;
   display: flex;
   flex-direction: row;
@@ -1433,7 +1477,7 @@ a:hover {
   display: none;
 } */
 .menu_item {
-  /* display: none; */
+  display: none;
   box-shadow: 0px 0px 5px #ccc;
   width: 100%;
   flex-direction: column;
@@ -1578,3 +1622,168 @@ a:hover {
   width: 100%;
 }
 /******* End Footer **********/
+
+/******** Dashboard ********/
+#dash_back {
+  background: #f8f8f8;
+  margin-top: 20px;
+  padding: 15px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.dash_title h1 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+#dash_col {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+.dash_body {
+  background: #fff;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dash_icon i {
+  border: 1px solid #e3ebfe;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 22px;
+  color: #4e84fa;
+  background: #f4f7ff;
+  line-height: 55px;
+}
+.dash_details {
+  margin-left: 25px;
+}
+.dash_details h2 {
+  font-size: 45px;
+  font-weight: 600;
+}
+.dash_details a {
+  font-size: 18px;
+  color: rgb(131, 131, 131);
+}
+.dash_details a:hover {
+  color: #0088cc;
+}
+/******** End Dashboard ********/
+
+/******* My profile *******/
+.pro_body {
+  background: #fff;
+  margin-top: 30px;
+  padding: 30px 30px;
+}
+.pro_body p {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pro_body p span {
+  padding: 10px 0px;
+  font-size: 17px;
+}
+.pro_body p span:nth-child(1) {
+  width: 20%;
+  font-size: 20px;
+  color: rgb(82, 82, 82);
+}
+/******* End My profile *******/
+
+/******* History ********/
+.history {
+  margin-top: 50px;
+}
+.history td a button {
+  background: #1c6732;
+  padding: 7px 20px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.history td a button i {
+  color: #fff;
+  font-size: 18px;
+}
+.history td a button:hover {
+  background: #dbaf29;
+}
+.history td a button i:hover {
+  color: #1c6732;
+}
+/******* End History ********/
+
+/******** Enroll Course ********/
+.form_btn_top {
+  margin: 30px 0px;
+}
+.form_btn_top ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.for_setting ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form_btn_top ul li {
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+  margin-right: 35px;
+}
+.member_active {
+  border-bottom: 5px solid #025f1e;
+  color: #000 !important;
+}
+.all_courses {
+  background: #fff;
+  padding: 20px 20px;
+}
+.all_courses p {
+  font-size: 20px;
+  color: rgb(105, 105, 105);
+}
+.review p {
+  margin-top: 20px;
+  padding: 30px 20px;
+  background: #fff;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(54, 54, 54);
+}
+/******** End Enroll Course ********/
+
+/******* Settings *******/
+.form_body {
+  background: #fff;
+  padding: 30px 30px;
+}
+.form_body h4 {
+  font-size: 25px;
+  color: rgb(94, 93, 93);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.form_body p {
+  color: rgb(94, 93, 93);
+  font-size: 18px;
+}
+/******* End Settings *******/

@@ -10,7 +10,17 @@ Route::post('/user/register/submit','Frontend\Auth\AuthController@register')->na
 Route::get('/user/otp','Frontend\Auth\AuthController@otpForm')->name('user.otp');
 
 Route::post('/user/login','Frontend\Auth\AuthController@login')->name('user.login');
-Route::get('/user/logout','Frontend\Auth\AuthController@logout');
+Route::get('/user/logout','Frontend\Auth\AuthController@logout')->name('user.logout');
+Route::get('/user/dashboard','Frontend\UserController@dashboard')->name('user.dashboard');
+Route::get('/user/enroll-courses','Frontend\UserController@enroll_course')->name('user.enroll.course');
+Route::get('/user/purchase-history','Frontend\UserController@purchase_history')->name('user.purchase.history');
+Route::get('/user/purchase-form','Frontend\UserController@purchase_form')->name('user.purchase.form');
+Route::get('/user/settings','Frontend\UserController@settings')->name('user.settings');
+Route::get('/user/profile','Frontend\UserController@profile')->name('user.profile');
+Route::get('/user/reviews','Frontend\UserController@reviews')->name('user.reviews');
+
+
+
 
 
 Route::get('/detailsmenu/{sub_id}','Frontend\HomeController@detail_menu')->name('subject_details');
