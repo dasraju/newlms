@@ -50,11 +50,14 @@ class UserController extends Controller
     }
 
     public function set_permission(PermissionSetupRequest $request){
+  
            $request->validated();
            $user = User::find($request->user);
-           
-           $chapter = Chapter::find($request->chapter);
-           $permission_set = $user->givePermissionTo($chapter->unique_name);
+            foreach($request->chapter as $chapter){
+              $chapter = Chapter::find($chapter);
+              $permission_set = $user->givePermissionTo($chapter->unique_name);
+            }
+          
            toast('Permission set succesfully','success');
             return Redirect()->route('user.give.permission');
        

@@ -1,6 +1,12 @@
 @extends('frontend.master')
 @section('content')
-
+<div class="modal fade bd-example-modal-lg" tabindex="-1" id="pdfmodal" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div id="pspdfkit" style="height: 100vh"></div>
+    </div>
+  </div>
+</div>
   <!-------Revision Course Name--------->
     <div class="rev_name">
       <div class="container-fluid">
@@ -40,7 +46,7 @@
     <div class="rev">
       <div class="container-fluid">
         <div class="row">
-            <div id="pspdfkit" style="height: 100vh"></div>
+           
           <div class="col-md-6 col-12">
             <div class="rev_body">
               <div class="rev_sub_name">
@@ -61,7 +67,7 @@
                             <a href=""><i class="fa-solid fa-lock"></i></a>
                           @else
                              @if ($note->view == '1')
-                               <a href="{{ asset('notefile').'/'.$note->file_name }}"><i class="fa-regular fa-eye"></i></a>
+                               <a onclick="show_pdf('{{ asset('notefile').'/'.$note->file_name }}')" href="javascript:void(0)"><i class="fa-regular fa-eye"></i></a>
                              @endif
                              @if ($note->download == '1')
                                 <a href="{{ route('pdf.download',['pdffile',$note->id]) }}"><i class="fa-solid fa-download"></i></a>
@@ -155,12 +161,14 @@
     document.getElementById('video_frame').src = data;
     $('#exampleModalCenter').modal('show', {backdrop: 'static'});
   }
-
-             PSPDFKit.load({
+  function show_pdf(file){
+    console.error(file);
+       PSPDFKit.load({
 				container: "#pspdfkit",
-				document: "{{ asset('notefile/202211290458Website Layout-IB (1).pdf')}}", // Add the path to your document here.
+				document: file, // Add the path to your document here.
 			})
 			.then(function(instance) {
+        $('#pdfmodal').modal('show');
 				console.log("PSPDFKit loaded", instance);
                 const items = instance.toolbarItems;
                 // Hide the toolbar item with the `id` "ink"
@@ -174,6 +182,9 @@
 			.catch(function(error) {
 				console.error(error.message);
 			});
+  }
+
+      
 
 
 

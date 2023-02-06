@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group  col-md-3 ">
                             <label>Subject Part</label>
-                            <select class="form-control select2" id="subjectpart" onchange="get_dropdown_data('chapter','chapter',$(this),'{{route('user.get.permission.data')}}')">
+                            <select class="form-control select2 " id="subjectpart" onchange="get_dropdown_data('chapter','chapter',$(this),'{{route('user.get.permission.data')}}')">
                                 <option>No data</option>
                                
                             </select>
@@ -59,7 +59,7 @@
 
                         <div class="form-group  col-md-3 ">
                             <label>Chapter</label>
-                            <select class="form-control select2" id="chapter" name="chapter">
+                            <select class="form-control select2 " multiple="true" id="chapter" name="chapter[]">
                                 <option>No data</option>
                                 
                             </select>
