@@ -13,8 +13,8 @@ Route::post('/user/login','Frontend\Auth\AuthController@login')->name('user.logi
 Route::get('/user/logout','Frontend\Auth\AuthController@logout')->name('user.logout');
 Route::get('/user/dashboard','Frontend\UserController@dashboard')->name('user.dashboard');
 Route::get('/user/enroll-courses','Frontend\UserController@enroll_course')->name('user.enroll.course');
-Route::get('/user/purchase-history','Frontend\UserController@purchase_history')->name('user.purchase.history');
-Route::get('/user/purchase-form','Frontend\UserController@purchase_form')->name('user.purchase.form');
+Route::get('/user/purchase-history','Frontend\PurchaseController@purchase_history')->name('user.purchase.history');
+Route::get('/user/purchase-form','Frontend\PurchaseController@purchase_form')->name('user.purchase.form');
 Route::get('/user/settings','Frontend\UserController@settings')->name('user.settings');
 Route::get('/user/profile','Frontend\UserController@profile')->name('user.profile');
 Route::get('/user/reviews','Frontend\UserController@reviews')->name('user.reviews');

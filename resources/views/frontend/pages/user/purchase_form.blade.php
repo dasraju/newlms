@@ -5,15 +5,15 @@
       <div class="row">
         <div class="col-12">
           <div class="dash_title">
-            <h1>Settings</h1>
+            <h1>Purchase Form</h1>
           </div>
         </div>
       </div>
       <div class="row justify-content-center" id="all">
         <div class="col-lg-9 col-sm-10 col-12 form_body">
           <div class="form_desc">
-            <h4>Contact information</h4>
-            <p>Provide your details below to create your account profile</p>
+            {{-- <h4>Contact information</h4> --}}
+            <p>Provide Billing and Topic details</p>
           </div>
         </div>
         <div class="col-lg-9 col-sm-10 col-12 form_body">
@@ -22,6 +22,38 @@
               <label for="firstname" class="form-label">First Name</label>
               <input type="text" class="form-control" id="firstname" />
             </div>
+            <div class="col-md-6">
+                <label for="firstname" class="form-label">Menu Head</label>
+                <select name="" id="menuhead" class="form-control"  onchange="get_dropdown_data('category','categories',$(this),'{{route('user.get.permission.data')}}')">
+                  <option value="">hhh</option>
+
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="firstname" class="form-label">Category</label>
+                <select name="categories" id="categories" class="form-control"onchange="get_dropdown_data('category','categories',$(this),'{{route('user.get.permission.data')}}')" >
+                  <option value="">hhh</option>
+                  <option value="">jjj</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="firstname" class="form-label">Subject</label>
+                <select name="subject"  class="form-control" id="subjects" onchange="get_dropdown_data('subjectpart','subjectpart',$(this),'{{route('user.get.permission.data')}}')">
+                    <option>No data</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="firstname" class="form-label">Subject Part</label>
+                <select name="subjectpart" class="form-control" id="subjectpart" onchange="get_dropdown_data('chapter','chapter',$(this),'{{route('user.get.permission.data')}}')">
+                    <option>No data</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="firstname" class="form-label">Category</label>
+                <select   class="form-control" multiple="true" id="chapter" name="chapter[]">
+                    <option>No data</option>
+                </select>
+              </div>
             <div class="col-md-6">
               <label for="lastname" class="form-label">Last Name</label>
               <input type="text" class="form-control" id="lastname" />
@@ -87,4 +119,17 @@
       </div>
     </div>
 </div>
+@endsection
+@section('page-js')
+<script>
+    $(document).ready(function() {
+
+    $('#menuhead').select2();
+    $('#categories').select2();
+    $('#subjects').select2();
+    $('#subjectpart').select2();
+    $('#chapter').select2();
+        });
+</script>
+
 @endsection

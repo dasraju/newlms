@@ -14,12 +14,7 @@ class UserController extends Controller
     public function profile(){
         return view('frontend.pages.user.profile');
     }
-    public function purchase_history(){
-        return view('frontend.pages.user.purchase_history');
-    }
-    public function purchase_form(){
-        return view('frontend.pages.user.purchase_form');
-    }
+
     public function enroll_course(){
         return view('frontend.pages.user.enroll_course');
     }

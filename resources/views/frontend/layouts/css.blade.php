@@ -1,5 +1,7 @@
 
+<link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/select2.css" />
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/bootstrap/bootstrap.min.css" />
+
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/other/owl.carousel.min.css" />
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/other/owl.theme.default.min.css" />
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/other/magnific-popup.css" />
@@ -13,3 +15,4 @@
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/bootnavbar.css" />
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/responsive.css" />
   <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/datatables.css" />
+
