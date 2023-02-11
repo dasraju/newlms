@@ -19,6 +19,8 @@ Route::get('/user/settings','Frontend\UserController@settings')->name('user.sett
 Route::get('/user/profile','Frontend\UserController@profile')->name('user.profile');
 Route::get('/user/reviews','Frontend\UserController@reviews')->name('user.reviews');
 
+Route::get('get/permission-data', 'Frontend\PurchaseController@get_permission_data')->name('get.permission.data');
+
 
 
 

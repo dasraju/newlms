@@ -86,7 +86,7 @@
 function get_dropdown_data(tablename,targetdropdown,e,dataUrl){
     var newvalue = e.val();
     var newurl = dataUrl+'?id='+newvalue+'&tablename='+tablename;
-   
+      
    $.get(newurl, function(data){
        $('#'+targetdropdown).html(data);
      
