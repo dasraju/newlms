@@ -15,6 +15,7 @@ Route::get('/user/dashboard','Frontend\UserController@dashboard')->name('user.da
 Route::get('/user/enroll-courses','Frontend\UserController@enroll_course')->name('user.enroll.course');
 Route::get('/user/purchase-history','Frontend\PurchaseController@purchase_history')->name('user.purchase.history');
 Route::get('/user/purchase-form','Frontend\PurchaseController@purchase_form')->name('user.purchase.form');
+Route::post('/user/send/purchase-request','Frontend\PurchaseController@purchase_request')->name('user.purchase.request');
 Route::get('/user/settings','Frontend\UserController@settings')->name('user.settings');
 Route::get('/user/profile','Frontend\UserController@profile')->name('user.profile');
 Route::get('/user/reviews','Frontend\UserController@reviews')->name('user.reviews');

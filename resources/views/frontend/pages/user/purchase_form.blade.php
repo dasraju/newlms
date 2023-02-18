@@ -17,14 +17,14 @@
           </div>
         </div>
         <div class="col-lg-9 col-sm-10 col-12 form_body">
-          <form class="row g-3">
-            
+          <form class="row g-3" action="{{ route('user.purchase.request') }}" method="POST">
+            @csrf
             <div class="col-md-6">
                 <label for="firstname" class="form-label">Menu Head</label>
                 <select name="" id="menuhead" class="form-control"  onchange="get_dropdown_data('category','categories',$(this),'{{route('get.permission.data')}}')">
                   <option value="">select menu head</option>
                   @foreach ($menuhead as $item)
-                   <option value="{{ $item->id }}">{{ $item->name }}</option> 
+                   <option value="{{ $item->id }}">{{ $item->name }}</option>
                   @endforeach
                 </select>
               </div>
@@ -36,36 +36,44 @@
               </div>
               <div class="col-md-6">
                 <label for="firstname" class="form-label">Subject</label>
-                <select name="subject"  class="form-control" id="subjects" onchange="get_dropdown_data('subjectpart','subjectpart',$(this),'{{route('get.permission.data')}}')">
+                <select name="subject_id"  class="form-control" id="subjects" onchange="get_dropdown_data('subjectpart','subjectpart',$(this),'{{route('get.permission.data')}}')">
                     <option>No data</option>
                 </select>
               </div>
-              <div class="col-md-6">
+              {{-- <div class="col-md-6">
                 <label for="firstname" class="form-label">Subject Part</label>
                 <select name="subjectpart" class="form-control" id="subjectpart" onchange="get_dropdown_data('chapter','chapter',$(this),'{{route('get.permission.data')}}')">
                     <option>No data</option>
                 </select>
-              </div>
-              <div class="col-md-6">
+              </div> --}}
+              {{-- <div class="col-md-6">
                 <label for="firstname" class="form-label">Chapter</label>
                 <select   class="form-control" multiple="true" id="chapter" name="chapter[]">
                     <option>No data</option>
                 </select>
-              </div>
+              </div> --}}
             <div class="col-md-6">
               <label for="lastname" class="form-label">Transaction Id</label>
-              <input type="text" class="form-control" id="lastname" />
+              <input type="text" class="form-control" name="trn_id" id="lastname" />
             </div>
+            <div class="col-md-6">
+                <label for="lastname" class="form-label">Amount</label>
+                <input type="text" name="amount" class="form-control" id="lastname" />
+              </div>
 
             <div class="col-md-6">
               <label for="job" class="form-label">Pay Method</label>
-              <select name="" id="" class="form-select">
+              <select name="pay_method" id="" class="form-select">
                 <option value="">Select</option>
                 <option value="Bkash">Bkash</option>
                   <option value="Nagad">Nagad</option>
               </select>
             </div>
-            
+            <div class="col-md-6">
+                <label for="lastname" class="form-label">Sender Number</label>
+                <input type="text" name="mobile" class="form-control" id="lastname" />
+              </div>
+
 
             <div class="col-12 mt-4">
               <button type="submit" class="btn btn-success">
@@ -94,11 +102,11 @@
           console.log(e);
             var newvalue = e.val();
             var newurl = dataUrl+'?id='+newvalue+'&tablename='+tablename;
-          
+
           $.get(newurl, function(data){
               console.log(data);
               $('#'+targetdropdown).html(data);
-            
+
           });
         }
 

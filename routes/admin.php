@@ -6,7 +6,7 @@ Route::get('login','Auth\AuthController@admin_login_form')->name('admin.login');
 Route::post('login','Auth\AuthController@admin_login')->name('admin.login.submit');
 Route::group([ 'middleware' => 'admin'], function() {
     Route::get('logout','Auth\AuthController@admin_logout')->name('admin.logout');
-  
+
     Route::get('/','HomeController@index')->name('admin.home');
     Route::resource('menu-head', 'MenuHeadController');
     Route::resource('subject', 'SubjectController');
@@ -43,6 +43,7 @@ Route::group([ 'middleware' => 'admin'], function() {
     Route::get('user/give-permission', 'UserController@give_permission')->name('user.give.permission');
     Route::post('user/give-permission/setup', 'UserController@set_permission')->name('user.permission.setup');
     Route::get('user/get/permission-data', 'UserController@get_permission_data')->name('user.get.permission.data');
+    Route::get('user/request-list/{status}', 'PurchaseController@request_list')->name('admin.request.list');
 });
 
 

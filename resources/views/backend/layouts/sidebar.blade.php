@@ -96,7 +96,16 @@
           <a href="{{route('course.pending')}}" class="nav-link"><i data-feather="monitor"></i><span>pending Course</span></a>
         </li>
         <li class="menu-header">User Menu</li>
-       
+        <li class="dropdown">
+            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>
+                Purchase Request</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="{{route('admin.request.list','0')}}">Pending Request</a></li>
+              <li><a class="nav-link" href="{{route('admin.request.list','1')}}">Processing Request</a></li>
+              <li><a class="nav-link" href="{{route('admin.request.list','2')}}">Completed Request</a></li>
+            </ul>
+          </li>
+
         <li class="dropdown {{ areActiveRoutes(['admin.user.list'])}} ">
           <a href="{{route('admin.user.list')}}" class="nav-link"><i data-feather="monitor"></i><span>User List</span></a>
         </li>
