@@ -9,8 +9,8 @@
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card">
             <div class="card-header">
-                <h4>Request List</h4>
-                <a href="course/create" class="btn btn-sm btn-primary text-right"> Create New +</a>
+                <h4>{{ $type  }} Request List</h4>
+                {{-- <a href="course/create" class="btn btn-sm btn-primary text-right"> Create New +</a> --}}
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -34,15 +34,21 @@
                         <td>{{ $data->trn_id }}</td>
                         <td>{{$data->pay_method}}</td>
                         <td>{{$data->subject->category->menu->name}}->{{$data->subject->category->name}}->{{  $data->subject->name}}</td>
-                        <td>
+                        <td class="text-center">
                             <label class="custom-switch ">
-                                
+                                 @if ($data->status == '0')
+                                   Pending
+                                 @elseif($data->status == '1')
+                                   Processing
+                                 @else
+                                   Completed
+                                 @endif
                           </label>
                         </td>
 
 
                         <td>
-                            <a href="{{route('course.edit',$data->id)}}" class="btn btn-primary">View</a>
+                            <a href="{{route('request-list.show',$data->id)}}" class="btn btn-primary">View</a>
                             <a href="javascript:void(0)" onclick="confirm_modal('{{route('course.destroy',$data->id)}}')" class="btn btn-danger">Cancel</a>
                         </td>
                     </tr>

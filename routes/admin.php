@@ -26,6 +26,7 @@ Route::group([ 'middleware' => 'admin'], function() {
     Route::resource('topical-pdf', 'TopicalpdfController');
     Route::resource('topical-video', 'TopicalvideoController');
     Route::resource('folder', 'FolderController');
+    Route::resource('request-list', 'PurchaseController');
     Route::resource('folder-pdf', 'FolderPdfController');
     Route::resource('resource-pdf', 'ResourcePdfController');
     Route::resource('resource-folder-pdf', 'FolderPdfController');
