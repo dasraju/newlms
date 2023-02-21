@@ -32,7 +32,7 @@
 
                         <td>
                                <label class="custom-switch mt-2">
-                                    <input  onchange="alert('$this.val')" type="checkbox" name="custom-switch-checkbox" {{$subcat->status =='1'?'checked':'' }} class="custom-switch-input">
+                                    <input id="subject_status"  onchange="change_status($(this),'{{route('admin.status.change',['subject',$subcat->id,'status'])}}' )" type="checkbox" name="custom-switch-checkbox" {{$subcat->status =='1'?'checked':'' }} class="custom-switch-input">
                                     <span class="custom-switch-indicator"></span>
                               </label>
 
@@ -40,8 +40,8 @@
                         </td>
 
                         <td>
-                            <a href="{{route('sub-cats.edit',$subcat->id)}}" class="btn btn-primary">Edit</a>
-                            <a href="javascript:void(0)" onclick="confirm_modal('{{route('sub-cats.destroy',$subcat->id)}}')" class="btn btn-danger">Delete</a>
+                            <a href="{{route('subject.edit',$subcat->id)}}" class="btn btn-primary">Edit</a>
+                            <a href="javascript:void(0)" onclick="confirm_modal('{{route('subject.destroy',$subcat->id)}}')" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                      @endforeach

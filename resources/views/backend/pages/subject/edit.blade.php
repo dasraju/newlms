@@ -15,10 +15,8 @@
                   <h4>Edit Subject</h4>
                 </div>
                 <div class="card-body">
-
-
                         <div class="form-row">
-                            <div class="form-group  col-md-6 offset-md-3">
+                            <div class="form-group  col-md-6 ">
                                 <label>Select Category</label>
                                 <select class="form-control" name="category">
                                     <option value="">--select--</option>

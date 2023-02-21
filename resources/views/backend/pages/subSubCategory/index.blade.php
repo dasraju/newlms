@@ -33,7 +33,7 @@
                         <td>{{$subcat->subsubcat_slug}}</td>
                         <td>
                                <label class="custom-switch mt-2">
-                                    <input  onchange="alert('$this.val')" type="checkbox" name="custom-switch-checkbox" {{$subcat->status =='1'?'checked':'' }} class="custom-switch-input">
+                                    <input  id ="subsubstatus" onchange="change_status($(this),'{{route('admin.status.change',['subsubcat',$subcat->id,'status'])}}' )" type="checkbox" name="custom-switch-checkbox" {{$subcat->status =='1'?'checked':'' }} class="custom-switch-input">
                                     <span class="custom-switch-indicator"></span>
                               </label>
 

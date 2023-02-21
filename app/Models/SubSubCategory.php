@@ -13,6 +13,6 @@ class SubSubCategory extends Model
 
     public function subject()
     {
-        return $this->belongsTo(Subject::class);
+        return $this->belongsTo(Subject::class)->withDefault(['name'=>'no name']);
     }
 }

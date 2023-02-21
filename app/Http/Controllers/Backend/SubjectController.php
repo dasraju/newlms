@@ -72,12 +72,12 @@ class SubjectController extends Controller
 
         if ($cat->save()) {
             toast('Category Updated','success');
-            return Redirect()->route('sub-cats.index');
+            return Redirect()->route('subject.index');
         } else {
             toast('Operation Failed','error');
             return Redirect()->back()->withInputes();
         }
-        return Redirect()->route('cats.index');
+        return Redirect()->route('subject.index');
     }
 
     public function destroy($id)
@@ -85,7 +85,7 @@ class SubjectController extends Controller
         if (Subject::destroy($id)) {
 
 
-            return redirect()->route('sub-cats.index');
+            return redirect()->route('subject.index');
         } else {
 
             return back();

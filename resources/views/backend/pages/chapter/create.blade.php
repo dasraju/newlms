@@ -20,7 +20,7 @@
                             <select class="form-control" name="subcategory">
                                 <option value="">--select--</option>
                                 @foreach ($subcats as $cat )
-                                <option value="{{$cat->id}}">{{$cat->name}} <span style="color:red">-({{$cat->subject->name}})</span> </option>
+                                <option value="{{$cat->id}}">{{$cat->name}} <span style="color:red">-({{$cat->subject->name}})</span> <span style="color:red">-({{$cat->subject->category->name}})</span></option>
                                 @endforeach
                             </select>
                         </div>

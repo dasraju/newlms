@@ -10,6 +10,8 @@ use App\Models\VideoSolution;
 use App\Models\ResourceFolderPdf;
 use App\Models\ResourcePdf;
 use App\Models\User;
+use App\Models\Subject;
+use App\Models\SubSubCategory;
 
 class HelperController extends Controller
 {
@@ -26,11 +28,13 @@ class HelperController extends Controller
                 $menuhead = MenuHead::where('id', $id)
                 ->update([$column => $status]);
               break;
-            case "cat":
-              echo "Your favorite color is blue!";
+            case "subsubcat":
+              $pdf = SubSubcategory::where('id', $id)
+              ->update([$column => $status]);
               break;
-            case "subcat":
-              echo "Your favorite color is green!";
+            case "subject":
+              $pdf = Subject::where('id', $id)
+              ->update([$column => $status]);
               break;
             case "pdfnote":
               $pdf = PdfFile::where('id', $id)
