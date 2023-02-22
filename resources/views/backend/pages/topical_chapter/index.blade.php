@@ -31,7 +31,7 @@
 
                         <td>
                                <label class="custom-switch mt-2">
-                                    <input  onchange="alert('$this.val')" type="checkbox" name="custom-switch-checkbox" {{$ch->status =='1'?'checked':'' }} class="custom-switch-input">
+                                    <input  id="chapterstatus" onchange="change_status($(this),'{{route('admin.status.change',['chapter',$ch->id,'status'])}}' )" type="checkbox" name="custom-switch-checkbox" {{$ch->status =='1'?'checked':'' }} class="custom-switch-input">
                                     <span class="custom-switch-indicator"></span>
                               </label>
 

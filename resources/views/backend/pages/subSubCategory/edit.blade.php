@@ -21,7 +21,7 @@
                             <select class="form-control" name="subcategory">
                                 <option value="">--select--</option>
                                 @foreach ($cats as $cat )
-                                <option {{$subcat->sub_category_id == $cat->id ?'selected':'' }} value="{{$cat->id}}">{{$cat->name}}</option>
+                                <option {{$subcat->subject_id == $cat->id ?'selected':'' }} value="{{$cat->id}}">{{$cat->category->name}}->{{$cat->name}}</option>
                                 @endforeach
                             </select>
                         </div>
