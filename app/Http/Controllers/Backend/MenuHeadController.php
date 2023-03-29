@@ -14,7 +14,7 @@ class MenuHeadController extends Controller
 {
     public function index()
     {
-        $cats = MenuHead::orderBy('created_at', 'desc')->paginate(10);
+        $cats = MenuHead::orderBy('created_at', 'desc')->paginate(1);
         return view('backend.pages.menuhead.index', compact('cats'));
     }
 
