@@ -43,10 +43,10 @@
         }else{
             var newurl = dataUrl+'?status=0';
         }
-        console.log(newurl);
+        
         $.get(newurl, function(data){
             console.log(data)
-            
+
         });
       };
  </script>
